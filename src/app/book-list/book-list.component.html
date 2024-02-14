@@ -1,0 +1,13 @@
+<!-- src/app/book-list/book-list.component.html -->
+
+<!-- Assuming this is in your book-list.component.html -->
+<form (submit)="searchBooks(searchQuery); $event.preventDefault()" class="search-container">
+    <input type="text" [(ngModel)]="searchQuery" name="search" placeholder="Search books..." required>
+    <button type="submit">Search</button>
+  </form>
+  
+
+<div *ngFor="let book of filteredBooks">
+  <app-book-display [book]="book"></app-book-display>
+</div>
+
